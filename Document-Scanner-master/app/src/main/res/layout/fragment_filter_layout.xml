@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/filter_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#5f88e7">
+
+        <TextView
+            android:id="@+id/original_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_radio_enhance_orig"
+            android:text="@string/original"
+            android:textSize="12sp"
+            android:gravity="center|bottom"
+            android:padding="10dp"
+            android:clickable="true"
+            android:textColor="@drawable/filter_btn_color"
+            />
+        <TextView
+            android:id="@+id/magic_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_radio_enhance_high"
+            android:text="@string/magic_color"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:clickable="true"
+            android:textColor="@drawable/filter_btn_color"
+            />
+        <TextView
+            android:id="@+id/gray_mode_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_radio_enhance_gray"
+            android:text="@string/gray_mode"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:clickable="true"
+            android:textColor="@drawable/filter_btn_color"
+            />
+        <TextView
+            android:id="@+id/bw_mode_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_radio_enhance_bw"
+            android:text="@string/b_amp_w"
+            android:textSize="12sp"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:clickable="true"
+            android:textColor="@drawable/filter_btn_color"
+            />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/popup"
+            android:padding="10dp"
+            android:src="@drawable/menu"
+            android:onClick="showPopup" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_bar_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/back_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_capture_confirm_back"
+            android:background="@android:color/transparent"
+            android:padding="15dp"
+            />
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:id="@+id/crop"
+
+            android:layout_weight="1"
+            android:onClick="onAddImageClicked"
+            android:src="@drawable/crop"
+            android:padding="7dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/addimage"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_add"
+            android:padding="7dp"/>
+
+        <ImageButton
+            android:id="@+id/ok_ib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ic_capture_confirm_ok"
+            android:background="@android:color/transparent"
+            android:padding="15dp"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/sourceFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_below="@+id/filter_bar_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/bottom_bar_crop"
+        android:layout_alignParentStart="true">
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_margin="5dp"
+            />
+        <android.support.v4.view.ViewPager
+            android:layout_width="match_parent"
+            android:id="@+id/pager"
+
+            android:layout_height="match_parent"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_bar_crop"
+            android:layout_below="@+id/filter_bar_layout"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+</RelativeLayout>
